@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <container class="home">
+    <div><home-header /></div>
+    <div><car-carousel /></div>
+  </container>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
-@Component({
-  components: {
-    HelloWorld
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import HomeHeader from "../components/HomeHeader.vue";
+import CarCarousel from "../components/CarCarousel.vue";
+
+export default Vue.extend({
+    components: {
+    HomeHeader,
+    CarCarousel
   }
-})
-export default class Home extends Vue {}
+});
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped></style>
